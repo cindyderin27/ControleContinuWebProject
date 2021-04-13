@@ -2,23 +2,78 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileApp.MainPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand"
+                      Padding="30,10,30,10"
+                     HorizontalOptions="Fill"
+                     BackgroundColor="White">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+
+                <Frame BackgroundColor="LightGreen"  CornerRadius="30"
+                     Padding="30,0,30,10"
+                  HeightRequest="40">
+                    <Label Text="Bienvenue!" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
+                </Frame>
+
+                <Label Text="Créer un bien"
+                    FontAttributes="Bold"
+                     TextColor="lightgreen"
+                     FontSize="30"
+                    Padding="30,10,30,10"/>
+
+                <Label Text="Id"
+                    FontAttributes="Bold"
+                   TextColor="Black"
+                    FontSize="16" Padding="8,24,30,0"/>
+                <Entry  x:Name="txtId"
+                            Placeholder=""
+                              FontSize="16"/>
+                
+                <Label Text="N°Propriétaire" 
+                    FontAttributes="Bold"
+                     TextColor="Black"
+                    Padding="8,24,30,0"/>
+
+                <Entry  x:Name="txtPropriétaire"
+                  />
+
+
+               <Label Text="Date de création" 
+                    FontAttributes="Bold"
+                     TextColor="Black"
+                    Padding="2,24,30,0"/>
+
+            <DatePicker x:Name="dateCreation"
+                        
+                          TextColor="Black"
+                        MinimumDate="01/01/1900"
+                        
+  />
+            
+                <Label Text="Nom"
+                    FontAttributes="Bold"
+                     TextColor="Black"
+                    FontSize="16" Padding="8,24,30,0"/>
+                <Entry  x:Name="txtNom"
+                    Placeholder="Entrer le nom"/>
+
+                <Button x:Name="btnSave"
+                    FontFamily="mdi"
+                    FontSize="Medium"
+                    ImageSource=""
+                     FontAttributes="Bold"
+                    BackgroundColor="LightGreen"
+                    ContentLayout="Right"
+                    Text="Enregistrer"
+                    HeightRequest="60"
+                    TextColor="White"
+                    WidthRequest="0"
+                     Margin="10,10,25,0"
+                    CornerRadius="30"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 
 </ContentPage>
