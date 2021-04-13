@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -30,6 +32,33 @@ namespace WebApiApplication.Controllers
             {
                 return BadRequest(ex.Message);
             }
+
+        }
+
+        [HttpGet]
+
+        public IHttpActionResult GetProprietaire(int id)
+        {
+            try
+            {
+                var proprietaire = db.Proprietaire.Find(id);
+
+                return Ok(proprietaire);
+
+            }
+            catch (DbUpdateException ex)
+            {
+                var exception = ex.InnerException?.InnerException as SqlException;
+                return BadRequest(exception?.Message);
+
+            }
+
+            catch (Exception ex)
+
+            {
+                return BadRequest(ex.Message);
+            }
+
 
         }
 
